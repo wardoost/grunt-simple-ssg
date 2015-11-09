@@ -1,0 +1,29 @@
+// Transparant background fix
+.background-color-alpha(@color, @alpha)
+{
+  @rgba: rgba(red(@color),green(@color),blue(@color),@alpha);
+  @argb: argb(@rgba);
+
+  background-color: @color;
+  background-color: @rgba;
+
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb}, endColorstr=@{argb})";
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb}, endColorstr=@{argb})";
+}
+
+// Extra vendor prefixes
+.background-size(@background-size) {
+  -webkit-background-size: @background-size;
+  -moz-background-size: @background-size;
+  -o-background-size: @background-size;
+  background-size: @background-size;
+}
+
+// Vendor prefixes mixins overrides
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y); // Custom Added
+      -ms-transform: translate(@x, @y); // IE9 only
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}

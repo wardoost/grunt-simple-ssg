@@ -1,0 +1,9 @@
+//----------------------------------------------
+//- Link mixins
+//----------------------------------------------
+
+mixin link-menu(link, activePage)
+  if activePage == fileName
+    li.active: a&attributes(attributes)(href=link): block
+  else
+    li: a&attributes(attributes)(href=link): block

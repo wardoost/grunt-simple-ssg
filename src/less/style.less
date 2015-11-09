@@ -1,0 +1,106 @@
+@import "bootstrap.less";
+@import "mixins.less";
+@import "animation.less";
+@import "fonts.less";
+
+html {
+
+
+  // ---------------------------------------------
+  //  GENERAL
+  // ---------------------------------------------
+  body {
+
+    
+    // ---------------------------------------------
+    //  NAVIGATION
+    // ---------------------------------------------
+    nav {
+
+    }
+
+
+    // ---------------------------------------------
+    //  NAVIGATION
+    // ---------------------------------------------
+    header{
+      .background-size(cover);
+      background-position: center;
+      background-image: url('../img/header.jpg');
+      color: @body-bg;
+      .header-content {
+        padding: 100px 15px 100px;
+      }
+    }
+
+
+    // ---------------------------------------------
+    //  NOTIFICATION SECTION
+    // ---------------------------------------------
+    section#notifications{
+      .notification{
+        color: @body-bg;
+        &.warning{
+          background-color: @brand-warning;
+        }
+        &.danger{
+          background-color: @brand-danger;
+        }
+        a{
+          color: @body-bg;
+          font-weight: bold;
+        }
+      }
+    }
+    
+
+
+    // ---------------------------------------------
+    //  TITLE SECTION
+    // ---------------------------------------------
+    section#title{
+      // Example of the animation defined in animation.less
+      .animation-name(fadeIn);
+      .animation-duration(1s);
+      .animation-fill-mode(both);
+    }
+
+
+    // ---------------------------------------------
+    //  MAIN SECTION
+    // ---------------------------------------------
+    section#main {
+      // Example of the animation defined in animation.less
+      .animation-name(fadeIn);
+      .animation-duration(1s);
+      .animation-fill-mode(both);
+      .bg-dark{
+        background-color: @brand-primary;
+        color: @body-bg;
+      }
+      section {
+          padding: 100px 0;
+      }
+
+      aside {
+          padding: 50px 0;
+      }
+
+      .no-padding {
+          padding: 0;
+      }
+
+    }
+
+
+    // ---------------------------------------------
+    //  FOOTER
+    // ---------------------------------------------
+    footer {
+      .text-footer{
+        .text-center();
+        font-size: @font-size-small;
+      }
+    }
+  }
+}
