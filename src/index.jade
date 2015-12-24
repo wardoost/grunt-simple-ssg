@@ -5,8 +5,8 @@ block vars
   -metaKeywordsPage = ""; //- Extra keywords for this page
 
 block content
-  header: .header-content: .header-content-inner.text-center
-    h1 Lorem Ipsum
+  header: .header-content.text-center
+    h1 About
     hr
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     a(href="#about").btn.btn-primary.btn-xl.page-scroll cillum dolore
@@ -18,7 +18,7 @@ block content
           hr.primary
           p
             | Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-  section#work.no-padding
+  section#work
     .container
       .row
         .col-lg-12.text-center
@@ -80,11 +80,11 @@ block content
                   | Category
                 .project-name
                   | Project Name
-  aside.bg-dark
+  aside#services.bg-dark
     .container.text-center
       .call-to-action
         h2 Temporibus autem quibusdam et aut officiis!
-        a.btn.btn-default.btn-xl.wow.tada(href='#') Sapiente delectus!
+        a.btn.btn-default.btn-xl.wow.tada(href='#about') Sapiente delectus!
   section#contact
     .container
       .row
