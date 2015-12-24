@@ -10,12 +10,17 @@ module.exports = function(grunt, options){
     },
     server: {
       options: {
-        message: 'Server is ready. Watch tasks starting up...'
+        message: 'Server is ready. Watch task starting up...'
       }
     },
     deploy: {
       options: {
         message: 'Site deployed to <%= grunt.option("deployURL") %>'
+      }
+    },
+    refresh: {
+      options: {
+        message: 'Watch task refreshed your page'
       }
     }
   }
