@@ -150,7 +150,7 @@
 }
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 1px;
+  border-width: 0; // default: 0 0 1px;
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -194,12 +194,13 @@
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: @navbar-padding-horizontal;
-  padding: 9px 10px;
-  .navbar-vertical-align(34px);
+  margin-right: 5px;
+  padding: 7px 8px 4px;
+  .navbar-vertical-align(40px);
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
+  border: none; // default: 1px solid transparent;
+  color: @navbar-default-toggle-icon-bar-bg;
   border-radius: @border-radius-base;
 
   // We remove the `outline` here, but later compensate by attaching `:hover`
