@@ -16,12 +16,7 @@ Install Grunt Dependencies.
 npm install
 ```
 
-For the favicons generator task to work you need ImageMagick.
-```
-brew install imagemagick
-```
-
-Edit Gruntfile.js and the source files to your needs and run grunt.
+Edit Gruntfile.js and the source files to your needs and run grunt. This setup requires MAMP and is configured for OS X.
 ```
 grunt
 ```
