@@ -51,14 +51,20 @@ html(lang="en")
     //- Open Graph (facebook)
     meta(property="og:type", content="website")
     meta(property="og:url", content=absoluteUrl)
-    meta(property="og:title", content=pageTitle + " - " + websiteTitle)
+    if pageTitle
+      meta(property="og:title", content=pageTitle + " - " + websiteTitle)
+    else
+      meta(property="og:title", content=websiteTitle)
     meta(property="og:description", content=metaDescription)
     meta(property="og:image", content=deployUrl + "img/social-share.png")
 
     //- Twitter
     meta(name="twitter:card" content="photo")
     meta(name="twitter:url" content=absoluteUrl)
-    meta(name="twitter:title" content=pageTitle + " - " + websiteTitle)
+    if pageTitle
+      meta(name="twitter:title" content=pageTitle + " - " + websiteTitle)
+    else
+      meta(name="twitter:title" content=websiteTitle)
     meta(name="twitter:description" content=metaDescription)
     meta(name="twitter:image" content=deployUrl + "img/social-share.png")
 
@@ -83,7 +89,7 @@ html(lang="en")
   //----------------------------------------------
   //- Body (ontouchstart fix to enable hover state for tapping on links)
   //----------------------------------------------
-  body(ontouchstart="")#page-top
+  body(ontouchstart="" class="#{fileName}")#page-top
     nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
       .container-fluid
         .navbar-header
@@ -107,7 +113,7 @@ html(lang="en")
         .container: h5 JavaScript is disabled which may cause this site to not work properly. Please enable JavaScript in your web browser.
       block notifications
 
-    section#main(class=fileName)
+    section#main
        block content
 
     footer
