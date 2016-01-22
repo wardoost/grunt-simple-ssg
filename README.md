@@ -1,6 +1,6 @@
-#Personal Site
+#Grunt Simple SSG
 
-A static site generator build on grunt with boostrap, pjax, modernizr, SEO optimization, ...
+A static site generator build on grunt with boostrap, jQuery, SEO optimization, ...
 
 *****
 
@@ -16,7 +16,7 @@ Install Grunt Dependencies.
 npm install
 ```
 
-Edit Gruntfile.js and the source files to your needs and run grunt. This setup requires MAMP and is configured for OS X.
+Edit Gruntfile.js and the source files to your needs and run grunt. This setup requires a correctly configured MAMP and is configured for OS X.
 ```
 grunt
 ```
@@ -26,30 +26,20 @@ grunt
 ##Variables
 
 ###Gruntfile.js
-- **deployDomain**: Your domain name without trailing slash nor subdomain. Site will be deployed to this server and domain will be used for absolute links
-> wardoosterlijnck.be
+- **deployDomain**: Your domain name without trailing slash. Site will be deployed to this server and domain will be used for absolute links
 - **deploySubDir**: Subdirectory where your website will be uploaded to.
-> root/
 - **deployURL**: Url composed of deployDomain and deploySubDir.
-> wardoosterlijnck.be/root/
 
-###example.jade (or other jade file)
+###JADE
 - **websiteTitle**: Website title in title case. Derived from project directory name. Logically overwritten in base.jade.
-> Static Site Generator
 - **pageTitle**: Page title in title case. Derived from filename. Logically overwritten in example.jade.
-> Example
 - **fileName**: Filename of current page without extension. Do not overwrite.
-> example
 - **baseUrl**: Relative path with trailing slash. Add the flag 'absolute' to your Grunt command to have absolute paths in al html.
-> ../
 - **deploySubDir**: DeploySubDir as defined in Gruntfile.js.
-> root/
 - **deployUrl**: Url to website derived from deployDomain and deploySubDir in Gruntfile.js.
-> http://www.wardoosterlijnck.be/root/
 - **absoluteUrl**: Absolute url to the current page based on deployUrl from gruntfile.js and filename.
-> http://www.wardoosterlijnck.be/root/example-dir/example
-- **timeStamp**: Date of today, format: DD/MM/YYYY
-> 09/04/2015
+- **shareImgFound**: Boolean value that detects if you have a social-share.png image.
+- **timeStamp**: Date of today, format: DD/MM/YYYY.
 
 *****
 
@@ -78,4 +68,6 @@ grunt deploy --absolute
 *****
 
 ##Todo
-- Implement grunt-uncss
+- Implement [grunt-uncss](https://github.com/addyosmani/grunt-uncss)
+- Implement [grunt-responsive-images](http://grunt-tasks.com/responsive-images/)
+- Implement [grunt-iconfont](https://github.com/poppinlp/grunt-iconfont) or [grunt-webfont](https://github.com/sapegin/grunt-webfont)

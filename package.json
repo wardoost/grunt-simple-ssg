@@ -1,9 +1,9 @@
 {
-  "name": "personal-site",
-  "version": "0.2.0",
+  "name": "grunt-simple-ssg",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git://bitbucket.org/wardoost/personal-site.git"
+    "url": "git://github.com/wardoost/grunt-simple-ssg.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

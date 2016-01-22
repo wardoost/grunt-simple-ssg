@@ -1,29 +1,12 @@
-// ---------------------------------------------
-// INITIATION FUNCTION
-// ---------------------------------------------
+// Initiation function
 var init = function(){
 
-  // Anchor links animate scroll
-  $("a[href^='#']").click(function(e) {
-     e.preventDefault(); // prevent default anchor click behavior
-     var hash = this.hash; // store hash
-     // animate scroll
-     $('html, body').animate({
-         scrollTop: $(hash).offset().top
-       }, 300, function(){
-         // when done, add hash to url (default click behaviour)
-         window.location.hash = hash;
-       });
-  });
-
-  // Collapse menu on click on anchor links in navbar
-  $(".navbar-nav li a[href^='#']").click(function(e) {
-    $(".navbar-collapse").collapse("hide");
+  //- Google analytics event for outbound links
+  $("a[href^='http']").click(function(e) {
+    var url = $(this).attr("href");
+    ga('send', 'event', 'outbound', 'click', url, { 'transport': 'beacon' });
   });
 }
 
-
-// ---------------------------------------------
-// INITIATION ON PAGE LOAD
-// ---------------------------------------------
+// Initiation on page load
 window.onload = init;

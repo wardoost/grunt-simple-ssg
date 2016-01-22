@@ -1,11 +1,16 @@
 extends ../layouts/base
 
-block vars
+block variables
   -metaKeywordsPage = "error"; //- Extra keywords for this page
-  -baseUrl = "/" + deploySubDir; //- baseURL from root for error pages because they can be called from every possible URL if you are not using absolute URL's
+  if !(baseUrl.indexOf(deployUrl) > -1)
+    -baseUrl = "/" + deploySubDir; //- baseURL from root for error pages because they can be called from every possible URL if you are not using absolute URL's
 
 block content
   .container
     .row
       .col-lg-12.text-center
-        h1 Internal Server Error.
+        p Internal Server Error.
+
+    .row
+      .col-lg-12.text-center
+        a(href=baseUrl target="_self").btn.btn-primary Go to home page

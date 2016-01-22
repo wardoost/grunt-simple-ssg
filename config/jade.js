@@ -12,6 +12,7 @@ module.exports = function(grunt, options){
             });
           }
 
+          // Adapt the base URL for every file
           var baseUrl = '';
           if (grunt.option('absolute')){
             // Absolute paths
@@ -24,21 +25,20 @@ module.exports = function(grunt, options){
               }
           }
 
-          // Create Titlecased titles from file and project names
+          // Create variables use in JADE
           var fileName = String(src).split('/').pop().replace('.jade','');
           var absoluteUrl = 'http://' + grunt.option('deployURL') + String(src).replace('src/', '').replace('.jade','');
           var deploySubDir = grunt.option('deploySubDir');
           var deployUrl = 'http://' + grunt.option('deployURL');
           var pageTitle = toTitleCase(fileName.replace(/-/g,' '));
           var websiteTitle = toTitleCase(grunt.option('projectDir').replace(/-/g,' '));
+          var shareImgFound = grunt.file.exists('src/img/social-share.png');
 
           // Create timestamp
           var date = new Date();
           var month = date.getMonth()+1;
           var day = date.getDate();
-          var timeStamp = (day<10 ? '0' : '') + day + '/' +
-                          (month<10 ? '0' : '') + month + '/' +
-                          date.getFullYear()
+          var timeStamp = (day<10 ? '0' : '') + day + '/' + (month<10 ? '0' : '') + month + '/' + date.getFullYear()
 
           return {
             websiteTitle: websiteTitle,
@@ -48,6 +48,7 @@ module.exports = function(grunt, options){
             absoluteUrl: absoluteUrl,
             deploySubDir: deploySubDir,
             deployUrl: deployUrl,
+            shareImgFound: shareImgFound,
             timeStamp : timeStamp
           };
         }

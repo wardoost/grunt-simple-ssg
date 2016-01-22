@@ -13,7 +13,7 @@ module.exports = function(grunt, options){
       files: [{
         expand: true,
         cwd: 'src',
-        src: ['img/**/*.{png,jpg,jpeg,gif}', '!img/favicon.png'],
+        src: ['img/**/*.{png,jpg,jpeg,gif,svg}', '!img/favicon.png'],
         dest: 'build/<%= grunt.option("deploySubDir") %>'
       }]
     }

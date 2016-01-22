@@ -1,106 +1,26 @@
 extends layouts/base
 
-block vars
+block variables
   -pageTitle = null; //- Custom page title
   -metaKeywordsPage = ""; //- Extra keywords for this page
 
 block content
-  header: .header-content.text-center
-    h1 About
-    hr
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    a(href="#about").btn.btn-primary.btn-xl.page-scroll 
-      i.fa.fa-camera-retro.fa-lg
-      |  cillum dolore
-  section#about
-    .container
-      .row
-        .col-lg-12.text-center
-          h2.section-heading Quis nostrum exercitationem
-          hr.primary
-          p
-            | Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-  section#work
-    .container
-      .row
-        .col-lg-12.text-center
-          h2.section-heading Work
-          hr.primary
-    .container-fluid
-      .row.no-gutter
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/oddisee.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/passingby.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/swarms.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/oddisee.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/passingby.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-        .col-lg-4.col-sm-6
-          a(href='#')
-            img.img-responsive(src='img/work/swarms.jpg', alt='')
-            .box-caption
-              .box-caption-content
-                .project-category
-                  | Category
-                .project-name
-                  | Project Name
-  aside#services.bg-dark
-    .container.text-center
-      .call-to-action
-        h2 Temporibus autem quibusdam et aut officiis!
-        a.btn.btn-default.btn-xl(href='#about')
-          i.fa.fa-fire-extinguisher.fa-lg
-          |  Sapiente delectus!
-  section#contact
-    .container
-      .row
-        .col-lg-8.col-lg-offset-2.text-center
-          h2.section-heading Contact
-          hr.primary
-          p
-            | Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-        .col-lg-4.col-lg-offset-2.text-center
-          i.fa.fa-phone.fa-3x
-          p 123-456-6789
-        .col-lg-4.text-center
-          i.fa.fa-envelope-o.fa-3x
-          p
-            a(href='mailto:your-email@your-domain.com') your-email@your-domain.com
+  .container
+    .row
+      .col-md-12.text-center
+        p#intro Online ego boost in process,#[br]check out these in the meantime:
+    .row
+      .col-md-12.text-center
+        ul#social
+          li
+            a(href="https://www.facebook.com/wardoosterlijnck" target="_blank" title="Follow me on Facebook")
+              span.icon.icon-facebook-square
+          li
+            a(href="https://twitter.com/wardoost" target="_blank" title="Follow me on Twitter")
+              span.icon.icon-twitter-square
+          li
+            a(href="https://www.linkedin.com/in/wardoosterlijnck" target="_blank" title="Check out my LinkedIn")
+              span.icon.icon-linkedin-square
+          li
+            a(href="https://github.com/wardoost" target="_blank" title="Check out my GitHub")
+              span.icon.icon-github-square

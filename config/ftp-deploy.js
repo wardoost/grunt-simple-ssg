@@ -3,8 +3,7 @@ module.exports = function(grunt, options){
     build: {
       auth: {
         host: grunt.option("deployDomain"),
-        port: 21,
-        authKey: 'test'
+        port: 21
       },
       src: 'build/<%= grunt.option("deploySubDir") %>',
       dest: '<%= grunt.option("deploySubDir") %>',

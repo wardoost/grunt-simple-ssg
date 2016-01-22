@@ -3,7 +3,12 @@ include mixins
 -var metaDescription = "A description of your website"; //- Keep between 150 and 160 characters
 -var metaKeywordsGlobal = "your,website,keywords"; //- Global and page keywords should contain relevant keywords (max 20)
 
-block vars
+block variables
+
+//- Set page title if none available
+if !pageTitle
+  -pageTitle = websiteTitle;
+
 
 doctype html
 html(lang="en")
@@ -16,15 +21,12 @@ html(lang="en")
     meta(name="author" content="Ward Oosterlijnck")
 
 
-    //----------------------------------------------
     //- Meta and title tags, link to sitemap important for SEO
-    //----------------------------------------------
     meta(name="description" content=metaDescription)
     meta(name="robots" content="index, follow")
-    meta(name="revisit-after" content="3 month")
 
     if metaKeywordsGlobal && metaKeywordsPage
-      meta(name="keywords" content=metaKeywordsGlobal + "," + metaKeywordsPage)
+      meta(name="keywords" content=metaKeywordsGlobal + ", " + metaKeywordsPage)
     else if metaKeywordsGlobal
       meta(name="keywords" content=metaKeywordsGlobal)
     else if metaKeywordsPage
@@ -32,10 +34,7 @@ html(lang="en")
 
     //- Keep page title under 50 to 60 characters
     block title
-      if pageTitle
-        title #{pageTitle} | #{websiteTitle}
-      else
-        title #{websiteTitle}
+      title #{pageTitle}
 
     //- Sitemap link
     link(href=deployUrl + "sitemap.xml" rel="sitemap" type="application/xml" title="Sitemap")
@@ -43,64 +42,45 @@ html(lang="en")
     //- Canonical link
     link(href=absoluteUrl rel="canonical")
 
-
-    //----------------------------------------------
-    //- Social media meta tags
-    //----------------------------------------------
     
     //- Open Graph (facebook)
     meta(property="og:type", content="website")
     meta(property="og:url", content=absoluteUrl)
-    if pageTitle
-      meta(property="og:title", content=pageTitle + " - " + websiteTitle)
-    else
-      meta(property="og:title", content=websiteTitle)
+    meta(property="og:title", content=pageTitle)
     meta(property="og:description", content=metaDescription)
-    meta(property="og:image", content=deployUrl + "img/social-share.png")
+    if shareImgFound
+      meta(property="og:image", content=deployUrl + "img/social-share.png")
+      meta(property="og:image:width", content="1200")
+      meta(property="og:image:height", content="630")
 
     //- Twitter
     meta(name="twitter:card" content="photo")
     meta(name="twitter:url" content=absoluteUrl)
-    if pageTitle
-      meta(name="twitter:title" content=pageTitle + " - " + websiteTitle)
-    else
-      meta(name="twitter:title" content=websiteTitle)
+    meta(name="twitter:title" content=pageTitle)
     meta(name="twitter:description" content=metaDescription)
-    meta(name="twitter:image" content=deployUrl + "img/social-share.png")
+    if shareImgFound
+      meta(name="twitter:image" content=deployUrl + "img/social-share.png")
 
 
-    //----------------------------------------------
     //- Include favicons links
-    //----------------------------------------------
     include ../includes/icons
 
-
-    //----------------------------------------------
     //- CSS links
-    //----------------------------------------------
     link(href=baseUrl + "assets/style.min.css" rel="stylesheet" type='text/css')
 
-    //----------------------------------------------
-    //- JS head links
-    //----------------------------------------------
+    //-Google Analytics
+    script.
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-72654540-1', 'auto'); //- Insert tracking ID here
+      ga('send', 'pageview');
+    script(src="//www.google-analytics.com/analytics.js" async)
+      
+    //- JS head link
     script(src=baseUrl + "assets/head.min.js")
 
 
-  //----------------------------------------------
   //- Body (ontouchstart fix to enable hover state for tapping on links)
-  //----------------------------------------------
   body(ontouchstart="" class="#{fileName}")#page-top
-    nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
-      .container-fluid
-        .navbar-header
-          button(type="button" data-toggle="collapse" data-target="#navbar-collapse-1").navbar-toggle.collapsed
-            i.fa.fa-bars.fa-2x
-          //- Website name or image comes here
-          a(href="#page-top").navbar-brand.page-scroll #{websiteTitle}
-
-        .collapse.navbar-collapse#navbar-collapse-1
-          include ../includes/menu
-
     section#notifications
       <!--[if lt IE 8]>
       <div class="notification danger">
@@ -116,14 +96,7 @@ html(lang="en")
     section#main
        block content
 
-    footer
-      .container
-          p.text-footer #{websiteTitle} | Last update on #{timeStamp}
 
-
-    //----------------------------------------------
     //- JS body links
-    //----------------------------------------------
     script(src=baseUrl + "assets/body.min.js")
-    //-script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-XXXXXXXX-X', 'auto');ga('send', 'pageview'); //- Insert tracking ID here
+    

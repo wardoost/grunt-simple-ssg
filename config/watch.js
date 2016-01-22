@@ -23,6 +23,10 @@ module.exports = function(grunt, options){
       files: ['src/img/**/*.{png,jpg,jpeg,gif}', '!src/img/favicon.png'],
       tasks: ['imagemin', 'notify:refresh']
     },
+    favicons: {
+      files: ['src/img/favicon.png'],
+      tasks: ['favicons', 'notify:refresh']
+    },
     fonts: {
       files: 'src/fonts/*.{eot,svg,ttf,woff,woff2}',
       tasks: ['copy:fonts', 'notify:refresh']

@@ -2,36 +2,22 @@
 @import "mixins.less";
 @import "animation.less";
 @import "fonts.less";
-@import "font-awesome/font-awesome.less";
 
 
-// ---------------------------------------------
-//  GENERAL
-// ---------------------------------------------
+// General
 html {
-
+  height: 100%;
 }
 body {
-  padding-top: @navbar-height;
-
-  &.index{
-    padding-top: 0;
-  }
+  height: 100%;
 }
 
-    
-// ---------------------------------------------
-//  NAVIGATION
-// ---------------------------------------------
-nav {
-  color: @body-bg;
-}
-
-
-// ---------------------------------------------
-//  NOTIFICATION SECTION
-// ---------------------------------------------
+// Notification section
 section#notifications{
+  display: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   .notification{
     color: @body-bg;
     &.warning{
@@ -47,47 +33,66 @@ section#notifications{
   }
 }
 
-
-// ---------------------------------------------
-//  MAIN SECTION
-// ---------------------------------------------
+// Main section
 section#main {
-  // Example of the animation defined in animation.less
-  .animation-name(fadeIn);
-  .animation-duration(1s);
-  .animation-fill-mode(both);
-
-  header{
-    .background-size(cover);
-    background-position: center;
-    background-image: url('../img/header.jpg');
-    color: @body-bg;
-    .header-content {
-      padding: 100px 15px 100px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  #intro{
+    .animation-name(fadeIn);
+    .animation-duration(2s);
+    .animation-fill-mode(both);
+    @media @md{
+      font-size: @font-size-base * 1.2;
+    }
+    @media @lg{
+      font-size: @font-size-base * 1.4;
+    }
+    @media @xlg{
+      font-size: @font-size-base * 1.6;
     }
   }
-
-  section {
-      padding: 50px 0;
+  #social{
+    font-size: @font-size-h1;
+    padding: 0;
+    @media @md{
+      font-size: @font-size-h1 * 1.3;
+    }
+    @media @lg{
+      font-size: @font-size-h1 * 1.5;
+    }
+    @media @xlg{
+      font-size: @font-size-h1 * 1.7;
+    }
+    li{
+      display: inline-block;
+      list-style: none;
+      margin-left: 5px;
+      margin-right: 5px;
+      a{
+        .transition(color 0.4s ease);
+        span{
+          .animation-name(fadeIn);
+          .animation-duration(2.5s);
+          .animation-fill-mode(both);
+          &.icon-facebook-square{
+            .animation-delay(0.2s);
+          }
+          &.icon-twitter-square{
+            .animation-delay(0.5s);
+          }
+          &.icon-linkedin-square{
+            .animation-delay(0.8s);
+          }
+          &.icon-github-square{
+            .animation-delay(1.2s);
+          }
+        }
+      }
+    }
   }
-  aside {
-      padding: 30px 0;
-  }
-
-  #services{
-    background-color: @brand-primary;
-    color: @body-bg;
-  }
-
 }
 
-
-// ---------------------------------------------
-//  FOOTER
-// ---------------------------------------------
+// Footer
 footer {
-  .text-footer{
-    .text-center();
-    font-size: @font-size-small;
-  }
 }

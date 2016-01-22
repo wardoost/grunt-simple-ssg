@@ -3,7 +3,7 @@ module.exports = function(grunt, options){
     build: {
       options: {
         proxy: 'localhost:8888',
-        files: ['src/**/*'],
+        files: ['build/**/*'],
         watchTask: true,
         logLevel: 'info',
         logConnections: true,
