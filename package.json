@@ -1,9 +1,17 @@
 {
   "name": "grunt-simple-ssg",
-  "version": "0.1.0",
+  "description": "A simple static site generator with a Grunt workflow",
+  "version": "0.1.1",
+  "author": {
+    "name": "Ward Oosterlijnck",
+    "email": "wardoosterlijnck@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/wardoost/grunt-simple-ssg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wardoost/grunt-simple-ssg/issues"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -17,9 +25,9 @@
     "grunt-contrib-uglify": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-dev-update": "^1.4.0",
-    "grunt-exec": "^0.4.6",
     "grunt-favicons": "^0.7.0",
     "grunt-ftp-deploy": "^0.1.10",
+    "grunt-mamp": "^0.2.0",
     "grunt-notify": "^0.4.1",
     "grunt-open": "^0.2.3",
     "grunt-robots-txt": "^0.3.0",

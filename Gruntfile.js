@@ -62,7 +62,8 @@ module.exports = function (grunt) {
 
   // Create server task
   grunt.registerTask('server', [
-    'exec:mamp',
+    'mamp:configserver',
+    'mamp:startserver',
     'browserSync',
     'notify:server',
     'watch'
