@@ -1,7 +1,7 @@
 {
   "name": "grunt-simple-ssg",
   "description": "A simple static site generator with a Grunt workflow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Ward Oosterlijnck",
     "email": "wardoosterlijnck@gmail.com"
@@ -24,8 +24,8 @@
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-uglify": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-dev-update": "^1.4.0",
     "grunt-favicons": "^0.7.0",
+    "grunt-focus": "^0.1.1",
     "grunt-ftp-deploy": "^0.1.10",
     "grunt-mamp": "^0.2.0",
     "grunt-notify": "^0.4.1",

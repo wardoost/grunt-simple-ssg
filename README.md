@@ -45,17 +45,22 @@ grunt
 
 ##Commands
 
-The default grunt command builds the site and starts a local server.
+The default grunt command builds a dev version of your site without minification and starts a local MAMP server.
 ```
 grunt
 ```
 
-The grunt dev command builds the site and seo and starts a local server.
+The grunt dev command is the default grunt command.
 ```
 grunt dev
 ```
 
-The grunt deploy command builds the site and seo and uploads the site with ftp. You need to create a .ftppass file in de root of the grunt project with authentification of your FTP server. More info on the [Grunt FTP deploy task GitHub page](https://github.com/zonak/grunt-ftp-deploy) about this.
+The grunt prod command builds a production version of your site with minification and seo and starts a local MAMP server.
+```
+grunt prod
+```
+
+The grunt deploy command builds a production version of your site with minification and seo and uploads the site with ftp. You need to create a .ftppass file in de root of the grunt project with authentification of your FTP server. More info on the [Grunt FTP deploy task GitHub page](https://github.com/zonak/grunt-ftp-deploy) about this.
 ```
 grunt deploy
 ```

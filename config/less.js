@@ -1,14 +1,20 @@
 module.exports = function(grunt, options){
   return {
-    less: {
+    dev: {
       options: {
-        compress: true,
+        compress: false,
         //sourceMap: true,
-        //sourceMapFileInline: true
+        sourceMapFileInline: true
       },
-      files: {
-        'build/<%= grunt.option("deploySubDir") %>assets/style.min.css': ['src/css/**/*.css', 'src/less/style.less']
-      }
+      src: ['src/css/**/*.css', 'src/less/style.less'],
+      dest: 'build/<%= grunt.option("deploySubDir") %>assets/style.css'
+    },
+    prod: {
+      options: {
+        compress: true
+      },
+      src: '<%= less.dev.src %>',
+      dest: '<%= less.dev.dest %>'
     }
   }
 };

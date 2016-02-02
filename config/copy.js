@@ -1,5 +1,11 @@
 module.exports = function(grunt, options){
   return {
+    images: {
+      expand: true,
+      cwd: 'src',
+      src: ['img/**/*.{png,jpg,jpeg,gif,svg}', '!img/favicon.png'],
+      dest: 'build/<%= grunt.option("deploySubDir") %>'
+    },
     fonts: {
       expand: true,
       cwd: 'src',

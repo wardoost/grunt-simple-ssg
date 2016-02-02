@@ -7,19 +7,35 @@ module.exports = function(grunt, options){
       files: 'src/**/*.jade',
       tasks: ['jade', 'notify:refresh']
     },
-    css: {
+    cssDev: {
       files: ['src/css/**/*.css', 'src/less/**/*.less'],
-      tasks: ['less', 'notify:refresh']
+      tasks: ['less:dev', 'notify:refresh']
     },
-    headjs: {
+    cssProd: {
+      files: ['src/css/**/*.css', 'src/less/**/*.less'],
+      tasks: ['less:prod', 'notify:refresh']
+    },
+    headJsDev: {
       files: 'src/js/head/**/*.js',
-      tasks: ['uglify:head', 'notify:refresh']
+      tasks: ['uglify:devHead', 'notify:refresh']
     },
-    bodyjs: {
+    headJsProd: {
+      files: 'src/js/head/**/*.js',
+      tasks: ['uglify:prodHead', 'notify:refresh']
+    },
+    bodyJsDev: {
       files: 'src/js/body/**/*.js',
-      tasks: ['uglify:body', 'notify:refresh']
+      tasks: ['uglify:devBody', 'notify:refresh']
     },
-    images: {
+    bodyJsProd: {
+      files: 'src/js/body/**/*.js',
+      tasks: ['uglify:prodBody', 'notify:refresh']
+    },
+    imagesDev: {
+      files: ['src/img/**/*.{png,jpg,jpeg,gif}', '!src/img/favicon.png'],
+      tasks: ['copy:images', 'notify:refresh']
+    },
+    imagesProd: {
       files: ['src/img/**/*.{png,jpg,jpeg,gif}', '!src/img/favicon.png'],
       tasks: ['imagemin', 'notify:refresh']
     },

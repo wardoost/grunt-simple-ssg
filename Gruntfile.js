@@ -48,58 +48,66 @@ module.exports = function (grunt) {
   //- Create tasks
   //----------------------------------------------
 
-  // Create build task
-  grunt.registerTask('build', [
+  // Create build tasks
+  grunt.registerTask('prodBuild', [
     'jade',
-    'less',
-    'uglify',
+    'less:prod',
+    'uglify:prodHead',
+    'uglify:prodBody',
+    'copy:php',
     'imagemin',
     'favicons',
-    'copy',
-    'textfile',
-    'notify:build'
+    'copy:fonts',
+    'textfile:htaccess',
+    'sitemap',
+    'robotstxt',
+    'notify:prodBuild'
+  ]);
+  grunt.registerTask('devBuild', [
+    'jade',
+    'less:dev',
+    'uglify:devHead',
+    'uglify:devBody',
+    'copy:php',
+    'copy:images',
+    'favicons',
+    'copy:fonts',
+    'textfile:htaccess',
+    'notify:devBuild'
   ]);
 
   // Create server task
   grunt.registerTask('server', [
-    'mamp:configserver',
-    'mamp:startserver',
+    'mamp',
     'browserSync',
     'notify:server',
-    'watch'
   ]);
 
-  // Create seo tasks
-  grunt.registerTask('seo', [
-    'sitemap',
-    'robotstxt'
-  ]);
-
-  // Create deploy tasks
+  // Create deploy task
   grunt.registerTask('deploy', [
     'clean',
-    'build',
-    'seo',
+    'prodBuild',
     'ftp-deploy',
     'notify:deploy',
     'open:deploy'
   ]);
 
-  // Create dev task
+  // Create build tasks tasks
   grunt.registerTask('dev', [
-    'devUpdate',
     'clean',
-    'build',
-    'seo',
-    'server'
+    'devBuild',
+    'server',
+    'focus:dev'
+  ]);
+  grunt.registerTask('prod', [
+    'clean',
+    'prodBuild',
+    'server',
+    'focus:prod'
   ]);
 
-  // Create default task
-  grunt.registerTask('default', [
-    'clean',
-    'build',
-    'server'
-  ]);
+  // Set default task
+  grunt.registerTask('default', ['dev']);
 };
 
 // Close MAMP server after processes stop

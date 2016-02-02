@@ -3,9 +3,14 @@ module.exports = function(grunt, options){
     options: {
       title: '<%= grunt.option("projectDir") %>'
     },
-    build: {
+    prodBuild: {
       options: {
-        message: 'Build complete'
+        message: 'Production build complete'
+      }
+    },
+    devBuild: {
+      options: {
+        message: 'Development build complete'
       }
     },
     server: {

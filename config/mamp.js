@@ -15,8 +15,6 @@ module.exports = function(grunt, options){
         port: 8888,
         user: 'ward'
       }
-    },
-    stopserver: {
     }
   }
 };
