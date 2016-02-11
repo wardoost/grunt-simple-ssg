@@ -5,25 +5,26 @@ block variables
   -metaKeywordsPage = ""; //- Extra keywords for this page
 
 block content
-  .container
-    .row
-      .col-md-12.text-center
-        p#intro Online ego boost in process,#[br]check out these in the meantime:
-    .row
-      .col-md-12.text-center
-        ul#social
-          li
-            a(href="mailto:wardoosterlijnck@gmail.com" target="_blank" title="Send me an email")
-              span.icon.icon-envelope-square
-          li
-            a(href="https://www.facebook.com/wardoosterlijnck" target="_blank" title="Follow me on Facebook")
-              span.icon.icon-facebook-square
-          li
-            a(href="https://twitter.com/wardoost" target="_blank" title="Follow me on Twitter")
-              span.icon.icon-twitter-square
-          li
-            a(href="https://www.linkedin.com/in/wardoosterlijnck" target="_blank" title="Check out my LinkedIn")
-              span.icon.icon-linkedin-square
-          li
-            a(href="https://github.com/wardoost" target="_blank" title="Check out my GitHub")
-              span.icon.icon-github-square
+  section#social
+    .container
+      .row
+        .col-md-12.text-center
+          p#intro Online ego boost in process,#[br]check out these in the meantime:
+      .row
+        .col-md-12.text-center
+          ul#icons
+            li
+              a(href="mailto:wardoosterlijnck@gmail.com" target="_blank" title="Send me an email")
+                span.icon.icon-envelope-square: span.hidden Email
+            li
+              a(href="https://www.facebook.com/wardoosterlijnck" target="_blank" title="Follow me on Facebook")
+                span.icon.icon-facebook-square: span.hidden Facebook
+            li
+              a(href="https://twitter.com/wardoost" target="_blank" title="Follow me on Twitter")
+                span.icon.icon-twitter-square: span.hidden Twitter
+            li
+              a(href="https://www.linkedin.com/in/wardoosterlijnck" target="_blank" title="Check out my LinkedIn")
+                span.icon.icon-linkedin-square: span.hidden LinkedIn
+            li
+              a(href="https://github.com/wardoost" target="_blank" title="Check out my GitHub")
+                span.icon.icon-github-square: span.hidden GitHub

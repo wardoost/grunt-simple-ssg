@@ -82,7 +82,7 @@ html(lang="en")
 
   //- Body (ontouchstart fix to enable hover state for tapping on links)
   body(ontouchstart="" class="#{fileName}")#page-top
-    section#notifications
+    #notifications
       <!--[if lt IE 8]>
       <div class="notification danger">
       <div class="container">
@@ -94,7 +94,7 @@ html(lang="en")
         .container: h5 JavaScript is disabled which may cause this site to not work properly. Please enable JavaScript in your web browser.
       block notifications
 
-    section#main
+    #main
        block content
 
 

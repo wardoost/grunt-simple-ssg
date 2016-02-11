@@ -7,6 +7,7 @@ module.exports = function(grunt, options){
         watchTask: true,
         logLevel: 'info',
         logConnections: true,
+        ghostMode: false,
         open: "ui-external",
         browser: "google chrome",
         notify: false
