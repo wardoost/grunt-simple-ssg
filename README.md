@@ -2,8 +2,6 @@
 
 A static site generator build on grunt with boostrap, jQuery, SEO optimization, ...
 
-*****
-
 ##Installation
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [getting started](http://gruntjs.com/getting-started) guide. Open terminal and install Grunt command line interface globally. You may need to use sudo.
@@ -20,8 +18,6 @@ Edit Gruntfile.js and the source files to your needs and run grunt. This setup r
 ```
 grunt
 ```
-
-*****
 
 ##Variables
 
@@ -40,8 +36,6 @@ grunt
 - **absoluteUrl**: Absolute url to the current page based on deployUrl from gruntfile.js and filename.
 - **shareImgFound**: Boolean value that detects if you have a social-share.png image.
 - **timeStamp**: Date of today, format: DD/MM/YYYY.
-
-*****
 
 ##Commands
 
@@ -69,8 +63,6 @@ You can add the flag "absolute" to have absolute paths in your HTML. This is pra
 ```
 grunt deploy --absolute
 ```
-
-*****
 
 ##Todo
 - Implement [grunt-uncss](https://github.com/addyosmani/grunt-uncss)
