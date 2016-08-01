@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   //----------------------------------------------
   //- Global variables
   //----------------------------------------------
-  var deployDomain = 'wardoosterlijnck.be'; // No trailing slash, no subdomain
+  var deployDomain = 'wardoost.online'; // No trailing slash, no subdomain
   var deploySubDir = ''; // Trailing slash
   var deployURL = deployDomain + '/' + deploySubDir;
 

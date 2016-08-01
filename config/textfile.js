@@ -7,7 +7,6 @@ module.exports = function(grunt, options){
         dest: 'build/<%= grunt.option("deploySubDir") %>',
         urlFormat: '.htaccess',
         customVars: {
-          url: '<%= grunt.option("deployURL") %>',
           pathRelativeRoot: '/<%= grunt.option("deploySubDir") %>'
         }
       }
