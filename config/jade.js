@@ -33,6 +33,11 @@ module.exports = function(grunt, options){
         var websiteTitle = toTitleCase(grunt.option('projectDir').replace(/-/g,' '));
         var shareImgFound = grunt.file.exists('src/img/social-share.png');
 
+        // Absolute index URL's adaptation
+        if( absoluteUrl.endsWith('index') ){
+          absoluteUrl = absoluteUrl.replace('index', '')
+        }
+
         // Create timestamp
         var date = new Date();
         var month = date.getMonth()+1;
