@@ -5,7 +5,13 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
+# Redirect all domains to one domain
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !<%= domain %>$ [NC]
+RewriteRule ^(.*)$ http://<%= domain %>/$1 [L,R=301]
 
 # Clean URL's
 RewriteEngine on
